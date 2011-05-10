@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMigrator.Legacy.MigratorDotNet", "src\FluentMigrator.Legacy.MigratorDotNet\FluentMigrator.Legacy.MigratorDotNet.csproj", "{02EB39F2-834E-4E5D-9BBE-EBA2777CA6C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMigrator.Legacy.MigratorDotNet.Tests", "src\FluentMigrator.Legacy.MigratorDotNet.Tests\FluentMigrator.Legacy.MigratorDotNet.Tests.csproj", "{F2755733-AF45-4302-A925-B417FCE04259}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		AutomatedRelease|Any CPU = AutomatedRelease|Any CPU
+		AutomatedRelease|x86 = AutomatedRelease|x86
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02EB39F2-834E-4E5D-9BBE-EBA2777CA6C1}.AutomatedRelease|Any CPU.ActiveCfg = AutomatedRelease|Any CPU
+		{02EB39F2-834E-4E5D-9BBE-EBA2777CA6C1}.AutomatedRelease|Any CPU.Build.0 = AutomatedRelease|Any CPU
+		{02EB39F2-834E-4E5D-9BBE-EBA2777CA6C1}.AutomatedRelease|x86.ActiveCfg = AutomatedRelease|x86
+		{02EB39F2-834E-4E5D-9BBE-EBA2777CA6C1}.AutomatedRelease|x86.Build.0 = AutomatedRelease|x86
+		{02EB39F2-834E-4E5D-9BBE-EBA2777CA6C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02EB39F2-834E-4E5D-9BBE-EBA2777CA6C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02EB39F2-834E-4E5D-9BBE-EBA2777CA6C1}.Debug|x86.ActiveCfg = Debug|x86
+		{02EB39F2-834E-4E5D-9BBE-EBA2777CA6C1}.Debug|x86.Build.0 = Debug|x86
+		{02EB39F2-834E-4E5D-9BBE-EBA2777CA6C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02EB39F2-834E-4E5D-9BBE-EBA2777CA6C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02EB39F2-834E-4E5D-9BBE-EBA2777CA6C1}.Release|x86.ActiveCfg = Release|x86
+		{02EB39F2-834E-4E5D-9BBE-EBA2777CA6C1}.Release|x86.Build.0 = Release|x86
+		{F2755733-AF45-4302-A925-B417FCE04259}.AutomatedRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{F2755733-AF45-4302-A925-B417FCE04259}.AutomatedRelease|Any CPU.Build.0 = Release|Any CPU
+		{F2755733-AF45-4302-A925-B417FCE04259}.AutomatedRelease|x86.ActiveCfg = Release|Any CPU
+		{F2755733-AF45-4302-A925-B417FCE04259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2755733-AF45-4302-A925-B417FCE04259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2755733-AF45-4302-A925-B417FCE04259}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F2755733-AF45-4302-A925-B417FCE04259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2755733-AF45-4302-A925-B417FCE04259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2755733-AF45-4302-A925-B417FCE04259}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

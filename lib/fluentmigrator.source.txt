@@ -1,0 +1,2 @@
+Source: FluentMigrator HEAD 4/28/11 9456bdd1978ee6f914f96d4303663208cebd28c5
+Debug build (just ran build.bat)
