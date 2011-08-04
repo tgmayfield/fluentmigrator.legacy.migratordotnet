@@ -21,13 +21,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
         [SetUp]
         public void SetUp()
         {
-            string constr = ConfigurationManager.AppSettings["SqlServer2005ConnectionString"];
-            if (constr == null)
-                throw new ArgumentNullException("SqlServer2005ConnectionString", "No config file");
-
-            _provider = new SqlServerTransformationProvider(new SqlServer2005Dialect(), constr);
-            _provider.BeginTransaction();
-
+			throw new NotImplementedException("Need to configure a SQL Server 2005 connection");
             AddDefaultTable();
         }
     }

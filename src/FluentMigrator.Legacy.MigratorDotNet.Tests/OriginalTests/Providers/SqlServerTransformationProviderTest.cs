@@ -22,31 +22,8 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
         [SetUp]
         public void SetUp()
         {
-            string constr = ConfigurationManager.AppSettings["SqlServerConnectionString"];
-            if (constr == null)
-                throw new ArgumentNullException("SqlServerConnectionString", "No config file");
-
-            _provider = new SqlServerTransformationProvider(new SqlServerDialect(), constr);
-            _provider.BeginTransaction();
-
+			throw new NotImplementedException("Need to configure a SQL Server connection");
             AddDefaultTable();
-        }
-
-        [Test]
-        public void QuoteCreatesProperFormat()
-        {
-            Dialect dialect = new SqlServerDialect();
-            Assert.AreEqual("[foo]", dialect.Quote("foo"));
-        }
-
-        [Test]
-        public void InstanceForProvider()
-        {
-            ITransformationProvider localProv = _provider["sqlserver"];
-            Assert.IsTrue(localProv is SqlServerTransformationProvider);
-
-            ITransformationProvider localProv2 = _provider["foo"];
-            Assert.IsTrue(localProv2 is NoOpTransformationProvider);
         }
         
         [Test]

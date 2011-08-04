@@ -10,12 +10,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
         [SetUp]
         public void SetUp()
         {
-            string constr = ConfigurationManager.AppSettings["OracleConnectionString"];
-            if (constr == null)
-                throw new ArgumentNullException("OracleConnectionString", "No config file");
-            _provider = new OracleTransformationProvider(new OracleDialect(), constr);
-            _provider.BeginTransaction();
-
+			throw new NotImplementedException("Need to configure an Oracle connection");
             AddDefaultTable();
         }
     }

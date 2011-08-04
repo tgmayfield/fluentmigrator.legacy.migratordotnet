@@ -21,6 +21,27 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 			var typed = GetTypedColumn(columnBuilder, column.Type, column.Size);
 			ApplyColumnOptions(typed, column.ColumnProperty, column.DefaultValue);
 		}
+		public static void AddColumn(this ITransformationProvider database, string table, string name, DbType type)
+		{
+			throw new NotImplementedException();
+		}
+		public static void AddColumn(this ITransformationProvider database, string table, string name, DbType type, int length)
+		{
+			throw new NotImplementedException();
+		}
+		public static void AddColumn(this ITransformationProvider database, string table, string name, DbType type, int length, ColumnProperty properties)
+		{
+			throw new NotImplementedException();
+		}
+		public static void AddColumn(this ITransformationProvider database, string table, string column, DbType type, object defaultValue)
+		{
+			throw new NotImplementedException();
+		}
+		public static void AddColumn(this ITransformationProvider database, string table, string name, DbType type, int length, ColumnProperty properties, object defaultValue)
+		{
+			throw new NotImplementedException();
+		}
+
 		public static void RemoveColumn(this ITransformationProvider database, string table, string column)
 		{
 			new DeleteExpressionRoot(database.Context)
@@ -147,6 +168,20 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 			{
 				builder.Nullable();
 			}
+		}
+
+		public static bool ColumnExists(this ITransformationProvider database, string table, string name)
+		{
+			throw new NotImplementedException();
+		}
+
+		public static Column[] GetColumns(this ITransformationProvider database, string table)
+		{
+			throw new NotImplementedException();
+		}
+		public static Column GetColumnByName(this ITransformationProvider database, string table, string name)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

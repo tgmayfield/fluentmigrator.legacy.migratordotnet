@@ -190,14 +190,6 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests
 			Assert.AreEqual(2008030195, _upCalled[0]);
         	
         }
-        
-        
-        
-		[Test]
-		public void ToHumanName()
-		{
-            Assert.AreEqual("Create a table", StringUtils.ToHumanName("CreateATable"));
-		}
 		
 		#region Helper methods and classes
 
@@ -226,7 +218,6 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests
 
             providerMock.SetReturnValue("get_MaxVersion", version);
             providerMock.SetReturnValue("get_AppliedMigrations", appliedVersions);
-            providerMock.SetReturnValue("get_Logger", new Logger(false));
 			if (assertRollbackIsCalled)
 				providerMock.Expect("Rollback");
 			else
@@ -261,17 +252,17 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests
                 _downCalled.Add(MigrationLoader.GetMigrationVersion(GetType()));
 			}
 		}
-		
-		[Migration(2008010195, Ignore=true)]
+
+		[TestMigration(2008010195, Ignore = true)]
 		public class FirstMigration : AbstractTestMigration {}
-		[Migration(2008020195, Ignore=true)]
+		[TestMigration(2008020195, Ignore = true)]
         public class SecondMigration : AbstractTestMigration { }
-		[Migration(2008030195, Ignore=true)]
+		[TestMigration(2008030195, Ignore = true)]
         public class ThirdMigration : AbstractTestMigration { }
-		[Migration(2008040195, Ignore=true)]
+		[TestMigration(2008040195, Ignore = true)]
         public class FourthMigration : AbstractTestMigration { }
-		
-        [Migration(2008050195, Ignore=true)]
+
+		[TestMigration(2008050195, Ignore = true)]
         public class BadMigration : AbstractTestMigration
         {
 			override public void Up()
@@ -283,11 +274,11 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests
 				throw new Exception("oh uh!");
 			}
 		}
-		
-        [Migration(2008060195, Ignore=true)]
+
+		[TestMigration(2008060195, Ignore = true)]
         public class SixthMigration : AbstractTestMigration { }
 
-        [Migration(2008070195)]
+		[TestMigration(2008070195)]
         public class NonIgnoredMigration : AbstractTestMigration { }
 
 		#endregion

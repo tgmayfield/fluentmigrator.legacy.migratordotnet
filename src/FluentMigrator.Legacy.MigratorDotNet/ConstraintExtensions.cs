@@ -13,5 +13,10 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 		{
 			database.ExecuteNonQuery("ALTER TABLE [{0}] DROP CONSTRAINT [{1}]", table, name);
 		}
+
+		public static bool ConstraintExists(this ITransformationProvider database, string table, string name)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

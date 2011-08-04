@@ -10,13 +10,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
         [SetUp]
         public void SetUp()
         {
-            string constr = ConfigurationManager.AppSettings["NpgsqlConnectionString"];
-            if (constr == null)
-                throw new ArgumentNullException("ConnectionString", "No config file");
-
-            _provider = new PostgreSQLTransformationProvider(new PostgreSQLDialect(), constr);
-            _provider.BeginTransaction();
-            
+			throw new NotImplementedException("Need to configure a PostgreSQL connection");
             AddDefaultTable();
         }
     }

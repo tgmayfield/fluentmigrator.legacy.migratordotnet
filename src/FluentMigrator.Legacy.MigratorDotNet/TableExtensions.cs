@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Data;
 
 using FluentMigrator.Builders.Create;
@@ -10,6 +11,10 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 {
 	public static class TableExtensions
 	{
+		public static void AddTable(this ITransformationProvider database, string name, string engine, params Column[] columns)
+		{
+			throw new NotImplementedException();
+		}
 		public static void AddTable(this ITransformationProvider database, string name, params Column[] columns)
 		{
 			var tableBuilder = new CreateExpressionRoot(database.Context).Table(name);
@@ -36,6 +41,16 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 			new RenameExpressionRoot(database.Context)
 				.Table(oldName)
 				.To(newName);
+		}
+
+		public static bool TableExists(this ITransformationProvider database, string name)
+		{
+			throw new NotImplementedException();
+		}
+
+		public static string[] GetTables(this ITransformationProvider database)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

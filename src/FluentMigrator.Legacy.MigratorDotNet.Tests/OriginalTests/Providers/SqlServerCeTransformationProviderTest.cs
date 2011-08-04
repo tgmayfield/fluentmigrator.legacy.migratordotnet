@@ -23,27 +23,9 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
         [SetUp]
         public void SetUp()
         {
-
-            string constr = ConfigurationManager.AppSettings["SqlServerCeConnectionString"];
-            if (constr == null)
-                throw new ArgumentNullException("SqlServerCeConnectionString", "No config file");
-
-			EnsureDatabase(constr);
-
-            _provider = new SqlServerCeTransformationProvider(new SqlServerCeDialect(), constr);
-            _provider.BeginTransaction();
+			throw new NotImplementedException("Need to configure a SQL Server CE connection");
 
             AddDefaultTable();
-        }
-
-        private void EnsureDatabase(string constr)
-        {
-            SqlCeConnection connection = new SqlCeConnection(constr);
-            if (!File.Exists(connection.Database))
-            {
-                SqlCeEngine engine = new SqlCeEngine(constr);
-                engine.CreateDatabase();
-            }
         }
 
         // [Test,Ignore("SqlServerCe doesn't support check constraints")]

@@ -17,17 +17,13 @@ using NUnit.Framework;
 namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 {
     [TestFixture, Category("MySql")]
-    public class MySqlTransformationProviderTest : TransformationProviderConstraintBase
+    public class MySqlTransformationProviderTest
+		: TransformationProviderConstraintBase
     {
         [SetUp]
         public void SetUp()
         {
-            string constr = ConfigurationManager.AppSettings["MySqlConnectionString"];
-            if (constr == null)
-                throw new ArgumentNullException("MySqlConnectionString", "No config file");
-            _provider = new MySqlTransformationProvider(new MysqlDialect(), constr);
-            // _provider.Logger = new Logger(true, new ConsoleWriter());
-
+			throw new NotImplementedException("Need to configure a MySql connection");
             AddDefaultTable();
         }
 
