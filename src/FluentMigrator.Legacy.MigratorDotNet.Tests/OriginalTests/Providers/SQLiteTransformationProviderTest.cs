@@ -10,11 +10,10 @@
 #endregion
 
 using System;
-using System.Configuration;
-using Migrator.Providers.SQLite;
+
 using NUnit.Framework;
 
-namespace Migrator.Tests.Providers
+namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 {
      [TestFixture, Category("SQLite")]
      public class SQLiteTransformationProviderTest : TransformationProviderBase

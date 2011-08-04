@@ -1,7 +1,8 @@
-using Migrator.Providers;
+using System;
+
 using NUnit.Framework;
 
-namespace Migrator.Tests.Providers
+namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 {
     [TestFixture]
     public class GenericProviderTests

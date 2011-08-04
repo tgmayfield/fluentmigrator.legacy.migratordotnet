@@ -1,10 +1,10 @@
+using System;
 using System.Reflection;
-using Migrator.Framework;
-using Migrator.Framework.Loggers;
+
 using NUnit.Framework;
 using NUnit.Mocks;
 
-namespace Migrator.Tests
+namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests
 {
     [TestFixture]
     public class MigrationLoaderTest 

@@ -11,10 +11,10 @@
 
 using System;
 using System.Collections.Generic;
-using Migrator.Framework;
+
 using NUnit.Framework;
 
-namespace Migrator.Tests
+namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests
 {
 	[TestFixture]
 	public class MigrationTypeComparerTest

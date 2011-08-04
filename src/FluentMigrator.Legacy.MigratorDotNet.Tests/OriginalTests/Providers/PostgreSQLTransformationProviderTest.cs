@@ -1,9 +1,8 @@
 using System;
-using System.Configuration;
-using Migrator.Providers.PostgreSQL;
+
 using NUnit.Framework;
 
-namespace Migrator.Tests.Providers
+namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 {
     [TestFixture, Category("Postgre")]
     public class PostgreSQLTransformationProviderTest : TransformationProviderConstraintBase

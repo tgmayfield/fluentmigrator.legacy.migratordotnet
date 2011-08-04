@@ -1,10 +1,9 @@
+using System;
 using System.Data;
-using Migrator.Framework;
-using Migrator.Framework.SchemaBuilder;
-using NUnit.Framework;
-using ForeignKeyConstraint = Migrator.Framework.ForeignKeyConstraint;
 
-namespace Migrator.Tests
+using NUnit.Framework;
+
+namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests
 {
 	[TestFixture]
 	public class SchemaBuilderTests

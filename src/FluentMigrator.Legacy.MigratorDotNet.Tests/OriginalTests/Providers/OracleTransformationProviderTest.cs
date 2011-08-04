@@ -1,9 +1,8 @@
 using System;
-using System.Configuration;
-using Migrator.Providers.Oracle;
+
 using NUnit.Framework;
 
-namespace Migrator.Tests.Providers
+namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 {
     [TestFixture, Category("Oracle")]
     public class OracleTransformationProviderTest : TransformationProviderConstraintBase

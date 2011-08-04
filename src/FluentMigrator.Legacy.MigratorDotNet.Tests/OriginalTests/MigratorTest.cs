@@ -8,15 +8,15 @@
 //License for the specific language governing rights and limitations
 //under the License.
 #endregion
+
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using Migrator.Framework;
-using Migrator.Framework.Loggers;
+
 using NUnit.Framework;
 using NUnit.Mocks;
 
-namespace Migrator.Tests
+namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests
 {
 	[TestFixture]
 	public class MigratorTest

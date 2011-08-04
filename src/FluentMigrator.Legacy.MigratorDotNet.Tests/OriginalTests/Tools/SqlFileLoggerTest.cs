@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using Migrator.Framework.Loggers;
+
 using NUnit.Framework;
 
-namespace Migrator.Tests.Tools
+namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Tools
 {
     [TestFixture]
     public class SqlFileLoggerTest

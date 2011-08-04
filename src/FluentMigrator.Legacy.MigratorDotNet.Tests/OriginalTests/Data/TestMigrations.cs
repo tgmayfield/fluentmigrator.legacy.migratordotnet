@@ -1,6 +1,6 @@
-using Migrator.Framework;
+using System;
 
-namespace Migrator.Tests.Data
+namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Data
 {
     [Migration(1)]
     public class FirstTestMigration : Migration

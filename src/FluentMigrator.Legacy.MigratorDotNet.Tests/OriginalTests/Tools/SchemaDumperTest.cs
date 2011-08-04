@@ -8,12 +8,12 @@
 //License for the specific language governing rights and limitations
 //under the License.
 #endregion
-using System;
-using System.Configuration;
-using NUnit.Framework;
-using Migrator.Tools;
 
-namespace Migrator.Tests.Tools
+using System;
+
+using NUnit.Framework;
+
+namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Tools
 {
 	[TestFixture, Category("MySql")]
 	public class SchemaDumperTest

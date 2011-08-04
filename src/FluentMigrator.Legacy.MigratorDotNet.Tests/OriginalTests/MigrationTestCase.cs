@@ -8,11 +8,13 @@
 //License for the specific language governing rights and limitations
 //under the License.
 #endregion
-using System.Reflection;
-using NUnit.Framework;
-using Migrator.Providers;
 
-namespace Migrator.Tests
+using System;
+using System.Reflection;
+
+using NUnit.Framework;
+
+namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests
 {
 	/// <summary>
 	/// Extend this classe to test your migrations

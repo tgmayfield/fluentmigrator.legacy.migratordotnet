@@ -10,14 +10,11 @@
 #endregion
 
 using System;
-using System.Configuration;
 using System.Data;
-using Migrator.Framework;
-using Migrator.Providers;
-using Migrator.Providers.SqlServer;
+
 using NUnit.Framework;
 
-namespace Migrator.Tests.Providers
+namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 {
     [TestFixture, Category("SqlServer")]
     public class SqlServerTransformationProviderTest : TransformationProviderConstraintBase

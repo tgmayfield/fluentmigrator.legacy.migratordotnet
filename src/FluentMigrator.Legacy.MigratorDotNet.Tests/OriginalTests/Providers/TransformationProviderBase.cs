@@ -1,9 +1,9 @@
 using System;
 using System.Data;
-using Migrator.Framework;
+
 using NUnit.Framework;
 
-namespace Migrator.Tests.Providers
+namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 {
   /// <summary>
   /// Base class for Provider tests for all non-constraint oriented tests.

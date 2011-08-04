@@ -1,9 +1,10 @@
+using System;
 using System.IO;
 using System.Reflection;
-using Migrator.Compile;
+
 using NUnit.Framework;
 
-namespace Migrator.Tests
+namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests
 {
     [TestFixture]
     public class ScriptEngineTests
