@@ -16,6 +16,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
     public virtual void TearDown()
     {	
       DropTestTables();
+	  _provider.RollBack();
     }
 
     protected void DropTestTables()
