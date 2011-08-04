@@ -42,7 +42,6 @@ task :publish => [:generate_nuspec, :generate_nupkg, :push_nupkg]
 nuspec :generate_nuspec do |nuspec|
   nuspec.id = "FluentMigrator.Legacy.MigratorDotNet"
   nuspec.version = VERSION
-  nuspec.file_version = VERSION
   nuspec.authors = "Thomas G Mayfield"
   nuspec.title = "Legacy Migrator.NET support for FluentMigrator"
   nuspec.description = "Use FluentMigrator with old Migrator.NET migrations"
