@@ -4,7 +4,9 @@ task :default => [:clean, :build, :test]
 
 SOLUTION = "FluentMigrator.Legacy.MigratorDotNet (2010).sln"
 
-msbuild :build do |msb|
+task :build => [:update_packages, :build_quick]
+
+msbuild :build_quick do |msb|
   msb.properties :configuration => :Debug
   msb.targets :Build
   msb.solution = SOLUTION
@@ -20,6 +22,11 @@ nunit :test => :build do |nunit|
   nunit.command = "tools/NUnit/nunit-console.exe"
   nunit.assemblies "build/FluentMigrator.Legacy.MigratorDotNet.Tests.dll"
   nunit.options '/xml=build\TestResults.xml'
+end
+
+task :update_packages do
+  sh 'tools/NuGet install -o ./packages src/FluentMigrator.Legacy.MigratorDotNet/packages.config'
+  sh 'tools/NuGet install -o ./packages src/FluentMigrator.Legacy.MigratorDotNet.Tests/packages.config'
 end
 
 # vim: set tabstop=2 expandtab:
