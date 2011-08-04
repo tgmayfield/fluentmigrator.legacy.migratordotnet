@@ -9,7 +9,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 	{
 		private readonly object _lock = new object();
 
-		protected TransformationProvider Database { get; private set; }
+		protected ITransformationProvider Database { get; private set; }
 
 		public abstract void Up();
 		public abstract void Down();
@@ -18,7 +18,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 		{
 			lock (_lock)
 			{
-				Database = new TransformationProvider(context);
+				Database = new ITransformationProvider(context);
 				Up();
 				Database = null;
 			}
@@ -28,7 +28,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 		{
 			lock (_lock)
 			{
-				Database = new TransformationProvider(context);
+				Database = new ITransformationProvider(context);
 				Down();
 				Database = null;
 			}

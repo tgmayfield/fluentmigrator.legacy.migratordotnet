@@ -8,7 +8,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 {
 	public static class IndexExtensions
 	{
-		public static void AddUniqueConstraint(this TransformationProvider database, string name, string table, params string[] columns)
+		public static void AddUniqueConstraint(this ITransformationProvider database, string name, string table, params string[] columns)
 		{
 			var indexBuilder = new CreateExpressionRoot(database.Context).Index(name);
 			var tabledIndexBuilder = indexBuilder.OnTable(table);
@@ -21,7 +21,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 			tabledIndexBuilder.WithOptions().Unique();
 		}
 
-		public static void AddIndex(this TransformationProvider database, string indexName, string tableName, params string[] columns)
+		public static void AddIndex(this ITransformationProvider database, string indexName, string tableName, params string[] columns)
 		{
 			ICreateIndexOnColumnSyntax builder = new CreateExpressionRoot(database.Context).Index(indexName)
 				.OnTable(tableName);
@@ -32,7 +32,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 			}
 		}
 
-		public static void RemoveIndex(this TransformationProvider database, string tableName, string indexName)
+		public static void RemoveIndex(this ITransformationProvider database, string tableName, string indexName)
 		{
 			new DeleteExpressionRoot(database.Context)
 				.Index(indexName)

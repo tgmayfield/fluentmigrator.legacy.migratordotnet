@@ -12,7 +12,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 {
 	public static class ColumnExtensions
 	{
-		public static void AddColumn(this TransformationProvider database, string table, Column column)
+		public static void AddColumn(this ITransformationProvider database, string table, Column column)
 		{
 			var columnBuilder = new CreateExpressionRoot(database.Context)
 				.Column(column.Name)
@@ -21,14 +21,14 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 			var typed = GetTypedColumn(columnBuilder, column.Type, column.Size);
 			ApplyColumnOptions(typed, column.ColumnProperty, column.DefaultValue);
 		}
-		public static void RemoveColumn(this TransformationProvider database, string table, string column)
+		public static void RemoveColumn(this ITransformationProvider database, string table, string column)
 		{
 			new DeleteExpressionRoot(database.Context)
 				.Column(column)
 				.FromTable(table);
 		}
 
-		public static void ChangeColumn(this TransformationProvider database, string table, Column column)
+		public static void ChangeColumn(this ITransformationProvider database, string table, Column column)
 		{
 			var columnBuilder = new AlterExpressionRoot(database.Context)
 				.Column(column.Name)
@@ -38,7 +38,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 			ApplyColumnOptions(typed, column.ColumnProperty, column.DefaultValue);
 		}
 
-		public static void RenameColumn(this TransformationProvider database, string table, string oldName, string newName)
+		public static void RenameColumn(this ITransformationProvider database, string table, string oldName, string newName)
 		{
 			new RenameExpressionRoot(database.Context)
 				.Column(oldName)

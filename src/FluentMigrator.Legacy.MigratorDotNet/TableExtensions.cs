@@ -10,7 +10,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 {
 	public static class TableExtensions
 	{
-		public static void AddTable(this TransformationProvider database, string name, params Column[] columns)
+		public static void AddTable(this ITransformationProvider database, string name, params Column[] columns)
 		{
 			var tableBuilder = new CreateExpressionRoot(database.Context).Table(name);
 
@@ -26,12 +26,12 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 			return ColumnExtensions.GetTypedColumn(tableBuilder.WithColumn(name), dbType, size);
 		}
 
-		public static void RemoveTable(this TransformationProvider database, string name)
+		public static void RemoveTable(this ITransformationProvider database, string name)
 		{
 			new DeleteExpressionRoot(database.Context).Table(name);
 		}
 
-		public static void RenameTable(this TransformationProvider database, string oldName, string newName)
+		public static void RenameTable(this ITransformationProvider database, string oldName, string newName)
 		{
 			new RenameExpressionRoot(database.Context)
 				.Table(oldName)

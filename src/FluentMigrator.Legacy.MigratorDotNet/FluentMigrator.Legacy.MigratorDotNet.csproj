@@ -128,6 +128,7 @@
     <Compile Include="MigratorDotNetMigration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TableExtensions.cs" />
+    <Compile Include="ITransformationProvider.cs" />
     <Compile Include="TransformationProvider.cs" />
   </ItemGroup>
   <ItemGroup>

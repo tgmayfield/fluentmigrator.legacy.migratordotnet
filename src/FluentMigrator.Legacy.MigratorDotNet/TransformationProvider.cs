@@ -5,6 +5,7 @@ using FluentMigrator.Infrastructure;
 namespace FluentMigrator.Legacy.MigratorDotNet
 {
 	public class TransformationProvider
+		: ITransformationProvider
 	{
 		public TransformationProvider(IMigrationContext context)
 		{
