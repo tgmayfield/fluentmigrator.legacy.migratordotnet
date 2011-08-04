@@ -18,7 +18,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 		{
 			lock (_lock)
 			{
-				Database = new ITransformationProvider(context);
+				Database = new TransformationProvider(context);
 				Up();
 				Database = null;
 			}
@@ -28,7 +28,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 		{
 			lock (_lock)
 			{
-				Database = new ITransformationProvider(context);
+				Database = new TransformationProvider(context);
 				Down();
 				Database = null;
 			}
