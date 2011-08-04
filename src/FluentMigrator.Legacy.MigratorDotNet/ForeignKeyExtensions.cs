@@ -9,7 +9,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 	{
 		public static void AddForeignKey(this ITransformationProvider database, string name, string sourceTable, string sourceColumn, string destTable, string destColumn)
 		{
-			database.AddForeignKey(name, sourceColumn, new[] { sourceColumn }, destTable, new[] { destColumn });
+			database.AddForeignKey(name, sourceTable, new[] { sourceColumn }, destTable, new[] { destColumn });
 		}
 		public static void AddForeignKey(this ITransformationProvider database, string name, string sourceTable, string[] sourceColumns, string destTable, string[] destColumns)
 		{
@@ -22,7 +22,9 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 
 		public static void RemoveForeignKey(this ITransformationProvider database, string table, string keyName)
 		{
-			new DeleteExpressionRoot(database.Context).ForeignKey(keyName);
+			new DeleteExpressionRoot(database.Context)
+				.ForeignKey(keyName)
+				.OnTable(table);
 		}
 	}
 }
