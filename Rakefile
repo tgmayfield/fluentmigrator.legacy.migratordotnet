@@ -19,7 +19,7 @@ msbuild :clean do |msb|
 end
 
 nunit :test => :build do |nunit|
-  nunit.command = "tools/NUnit/nunit-console.exe"
+  nunit.command = Dir.glob('packages/NUnit*/tools/nunit-console.exe').to_a()[0]
   nunit.assemblies "build/FluentMigrator.Legacy.MigratorDotNet.Tests.dll"
   nunit.options '/xml=build\TestResults.xml'
 end
