@@ -61,6 +61,7 @@
     <Compile Include="OriginalTests\Data\TestMigrations.cs" />
     <Compile Include="OriginalTests\MigrationLoader.cs" />
     <Compile Include="OriginalTests\Migrator.cs" />
+    <Compile Include="OriginalTests\MigratorRunner.cs" />
     <Compile Include="OriginalTests\MigratorTestDates.cs" />
     <Compile Include="OriginalTests\Providers\GenericTransformationProvider.cs" />
     <Compile Include="OriginalTests\Providers\MySqlTransformationProviderTest.cs" />

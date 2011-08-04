@@ -5,8 +5,10 @@ using System.Reflection;
 namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests
 {
 	public class Migrator
+		: MigratorRunner
 	{
 		public Migrator(ITransformationProvider database, Assembly assembly, bool trace)
+			: base(database)
 		{
 			throw new NotImplementedException();
 		}

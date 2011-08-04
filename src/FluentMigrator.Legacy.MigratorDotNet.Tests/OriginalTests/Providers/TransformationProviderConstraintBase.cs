@@ -41,6 +41,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 		public void CanAddPrimaryKey()
 		{
 			AddPrimaryKey();
+			_migrator.Execute();
 			Assert.IsTrue(_provider.PrimaryKeyExists("Test", "PK_Test"));
 		}
 
@@ -60,6 +61,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 		public void CanAddForeignKey()
 		{
 			AddForeignKey();
+			_migrator.Execute();
 			Assert.IsTrue(_provider.ConstraintExists("TestTwo", "FK_Test_TestTwo"));
 		}
 
@@ -67,6 +69,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 		public virtual void CanAddUniqueConstraint()
 		{
 			AddUniqueConstraint();
+			_migrator.Execute();
 			Assert.IsTrue(_provider.ConstraintExists("TestTwo", "UN_Test_TestTwo"));
 		}
 
@@ -74,6 +77,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 		public virtual void CanAddMultipleUniqueConstraint()
 		{
 			AddMultipleUniqueConstraint();
+			_migrator.Execute();
 			Assert.IsTrue(_provider.ConstraintExists("TestTwo", "UN_Test_TestTwo"));
 		}
 
@@ -81,6 +85,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 		public virtual void CanAddCheckConstraint()
 		{
 			AddCheckConstraint();
+			_migrator.Execute();
 			Assert.IsTrue(_provider.ConstraintExists("TestTwo", "CK_TestTwo_TestId"));
 		}
 
@@ -89,6 +94,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 		{
 			AddForeignKey();
 			_provider.RemoveForeignKey("TestTwo", "FK_Test_TestTwo");
+			_migrator.Execute();
 			Assert.IsFalse(_provider.ConstraintExists("TestTwo", "FK_Test_TestTwo"));
 		}
 
@@ -97,6 +103,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 		{
 			AddUniqueConstraint();
 			_provider.RemoveConstraint("TestTwo", "UN_Test_TestTwo");
+			_migrator.Execute();
 			Assert.IsFalse(_provider.ConstraintExists("TestTwo", "UN_Test_TestTwo"));
 		}
 
@@ -105,6 +112,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 		{
 			AddCheckConstraint();
 			_provider.RemoveConstraint("TestTwo", "CK_TestTwo_TestId");
+			_migrator.Execute();
 			Assert.IsFalse(_provider.ConstraintExists("TestTwo", "CK_TestTwo_TestId"));
 		}
 
@@ -121,6 +129,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 		public void ConstraintExist()
 		{
 			AddForeignKey();
+			_migrator.Execute();
 			Assert.IsTrue(_provider.ConstraintExists("TestTwo", "FK_Test_TestTwo"));
 			Assert.IsFalse(_provider.ConstraintExists("abc", "abc"));
 		}
@@ -133,6 +142,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 				new Column("PersonId", DbType.Int32, ColumnProperty.PrimaryKey),
 				new Column("AddressId", DbType.Int32, ColumnProperty.PrimaryKey)
 				);
+			_migrator.Execute();
 			Assert.IsTrue(_provider.TableExists("Test"), "Table doesn't exist");
 			Assert.IsTrue(_provider.PrimaryKeyExists("Test", "PK_Test"), "Constraint doesn't exist");
 		}
@@ -145,6 +155,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 				new Column("AddressId", DbType.Int32, ColumnProperty.PrimaryKey),
 				new Column("Name", DbType.String, 30, ColumnProperty.Null)
 				);
+			_migrator.Execute();
 			Assert.IsTrue(_provider.TableExists("Test"), "Table doesn't exist");
 			Assert.IsTrue(_provider.PrimaryKeyExists("Test", "PK_Test"), "Constraint doesn't exist");
 

@@ -10,13 +10,14 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 	/// </summary>
 	public class TransformationProviderBase
 	{
+		protected Migrator _migrator;
 		protected ITransformationProvider _provider;
 
 		[TearDown]
 		public virtual void TearDown()
 		{
 			DropTestTables();
-			_provider.RollBack();
+			_migrator.RollBack();
 		}
 
 		protected void DropTestTables()
@@ -317,18 +318,6 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 			_provider.MigrationApplied(1);
 			Assert.AreEqual(1, _provider.AppliedMigrations[0]);
 			Assert.IsTrue(_provider.TableExists("SchemaInfo"), "No SchemaInfo table created");
-		}
-
-		/// <summary>
-		/// Reproduce bug reported by Luke Melia & Daniel Berlinger :
-		/// http://macournoyer.wordpress.com/2006/10/15/migrate-nant-task/#comment-113
-		/// </summary>
-		[Test]
-		public void CommitTwice()
-		{
-			_provider.Commit();
-			Assert.AreEqual(0, _provider.AppliedMigrations.Count);
-			_provider.Commit();
 		}
 
 		[Test]
