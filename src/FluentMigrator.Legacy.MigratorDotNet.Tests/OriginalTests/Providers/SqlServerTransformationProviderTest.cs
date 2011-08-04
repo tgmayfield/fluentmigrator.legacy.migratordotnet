@@ -16,39 +16,39 @@ using NUnit.Framework;
 
 namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 {
-    [TestFixture, Category("SqlServer")]
-    public class SqlServerTransformationProviderTest : TransformationProviderConstraintBase
-    {
-        [SetUp]
-        public void SetUp()
-        {
+	[TestFixture, Category("SqlServer")]
+	public class SqlServerTransformationProviderTest : TransformationProviderConstraintBase
+	{
+		[SetUp]
+		public void SetUp()
+		{
 			throw new NotImplementedException("Need to configure a SQL Server connection");
-            AddDefaultTable();
-        }
-        
-        [Test]
-        public void ByteColumnWillBeCreatedAsBlob()
-        {
-            _provider.AddColumn("TestTwo", "BlobColumn", DbType.Byte);
-            Assert.IsTrue(_provider.ColumnExists("TestTwo", "BlobColumn"));
-        }
+			AddDefaultTable();
+		}
 
-        [Test]
-        public void TableExistsShouldWorkWithTableNamesWithBracket()
-        {
-            Assert.IsTrue(_provider.TableExists("[TestTwo]"));            
-        }
+		[Test]
+		public void ByteColumnWillBeCreatedAsBlob()
+		{
+			_provider.AddColumn("TestTwo", "BlobColumn", DbType.Byte);
+			Assert.IsTrue(_provider.ColumnExists("TestTwo", "BlobColumn"));
+		}
 
-        [Test]
-        public void TableExistsShouldWorkWithSchemaNameAndTableName()
-        {
-            Assert.IsTrue(_provider.TableExists("dbo.TestTwo"));
-        }
-        
-        [Test]
-        public void TableExistsShouldWorkWithBracketsAndSchemaNameAndTableName()
-        {
-            Assert.IsTrue(_provider.TableExists("[dbo].[TestTwo]"));
-        }
-    }
+		[Test]
+		public void TableExistsShouldWorkWithTableNamesWithBracket()
+		{
+			Assert.IsTrue(_provider.TableExists("[TestTwo]"));
+		}
+
+		[Test]
+		public void TableExistsShouldWorkWithSchemaNameAndTableName()
+		{
+			Assert.IsTrue(_provider.TableExists("dbo.TestTwo"));
+		}
+
+		[Test]
+		public void TableExistsShouldWorkWithBracketsAndSchemaNameAndTableName()
+		{
+			Assert.IsTrue(_provider.TableExists("[dbo].[TestTwo]"));
+		}
+	}
 }

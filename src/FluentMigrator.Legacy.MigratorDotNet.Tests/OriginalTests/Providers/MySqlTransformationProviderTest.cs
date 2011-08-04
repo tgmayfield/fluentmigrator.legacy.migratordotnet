@@ -16,34 +16,35 @@ using NUnit.Framework;
 
 namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 {
-    [TestFixture, Category("MySql")]
-    public class MySqlTransformationProviderTest
+	[TestFixture, Category("MySql")]
+	public class MySqlTransformationProviderTest
 		: TransformationProviderConstraintBase
-    {
-        [SetUp]
-        public void SetUp()
-        {
+	{
+		[SetUp]
+		public void SetUp()
+		{
 			throw new NotImplementedException("Need to configure a MySql connection");
-            AddDefaultTable();
-        }
+			AddDefaultTable();
+		}
 
-        [TearDown]
-        public override void TearDown()
-        {
-            DropTestTables();
-        }
+		[TearDown]
+		public override void TearDown()
+		{
+			DropTestTables();
+		}
 
-        [Test]
-        public void AddTableWithMyISAMEngine()
-        {
-            _provider.AddTable("Test", "MyISAM",
-                               new Column("Id", DbType.Int32, ColumnProperty.NotNull),
-                               new Column("name", DbType.String, 50)
-                );
-        }
+		[Test]
+		public void AddTableWithMyISAMEngine()
+		{
+			_provider.AddTable("Test", "MyISAM",
+				new Column("Id", DbType.Int32, ColumnProperty.NotNull),
+				new Column("name", DbType.String, 50)
+				);
+		}
 
 		// [Test,Ignore("MySql doesn't support check constraints")]
-        public override void CanAddCheckConstraint() {}
-
-    }
+		public override void CanAddCheckConstraint()
+		{
+		}
+	}
 }

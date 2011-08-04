@@ -13,26 +13,28 @@ using System;
 
 using NUnit.Framework;
 
-using System.IO;
-
 namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 {
-    [TestFixture, Category("SqlServerCe")]
-    public class SqlServerCeTransformationProviderTest : TransformationProviderConstraintBase
-    {
-        [SetUp]
-        public void SetUp()
-        {
+	[TestFixture, Category("SqlServerCe")]
+	public class SqlServerCeTransformationProviderTest : TransformationProviderConstraintBase
+	{
+		[SetUp]
+		public void SetUp()
+		{
 			throw new NotImplementedException("Need to configure a SQL Server CE connection");
 
-            AddDefaultTable();
-        }
+			AddDefaultTable();
+		}
 
-        // [Test,Ignore("SqlServerCe doesn't support check constraints")]
-		public override void CanAddCheckConstraint() { }
+		// [Test,Ignore("SqlServerCe doesn't support check constraints")]
+		public override void CanAddCheckConstraint()
+		{
+		}
 
 		// [Test,Ignore("SqlServerCe doesn't support table renaming")]
 		// see: http://www.pocketpcdn.com/articles/articles.php?&atb.set(c_id)=74&atb.set(a_id)=8145&atb.perform(details)=&
-		public override void RenameTableThatExists() { }
-    }
+		public override void RenameTableThatExists()
+		{
+		}
+	}
 }

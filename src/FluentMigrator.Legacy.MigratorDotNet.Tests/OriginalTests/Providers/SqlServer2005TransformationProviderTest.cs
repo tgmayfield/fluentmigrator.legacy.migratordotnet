@@ -15,14 +15,14 @@ using NUnit.Framework;
 
 namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 {
-    [TestFixture, Category("SqlServer2005")]
-    public class SqlServer2005TransformationProviderTest : TransformationProviderConstraintBase
-    {
-        [SetUp]
-        public void SetUp()
-        {
+	[TestFixture, Category("SqlServer2005")]
+	public class SqlServer2005TransformationProviderTest : TransformationProviderConstraintBase
+	{
+		[SetUp]
+		public void SetUp()
+		{
 			throw new NotImplementedException("Need to configure a SQL Server 2005 connection");
-            AddDefaultTable();
-        }
-    }
+			AddDefaultTable();
+		}
+	}
 }

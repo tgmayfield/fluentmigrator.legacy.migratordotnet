@@ -15,14 +15,14 @@ using NUnit.Framework;
 
 namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests.Providers
 {
-     [TestFixture, Category("SQLite")]
-     public class SQLiteTransformationProviderTest : TransformationProviderBase
-     {
-         [SetUp]
-         public void SetUp()
-         {
-			 throw new NotImplementedException("Need to configure a SQLite connection");
-             AddDefaultTable();
-         }
-     }
+	[TestFixture, Category("SQLite")]
+	public class SQLiteTransformationProviderTest : TransformationProviderBase
+	{
+		[SetUp]
+		public void SetUp()
+		{
+			throw new NotImplementedException("Need to configure a SQLite connection");
+			AddDefaultTable();
+		}
+	}
 }

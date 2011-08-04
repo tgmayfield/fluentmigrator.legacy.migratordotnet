@@ -21,6 +21,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet.OriginalTests
 		{
 			throw new NotImplementedException();
 		}
+
 		public void MigrateToLastVersion()
 		{
 			throw new NotImplementedException();
