@@ -58,11 +58,34 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
+    <Compile Include="OriginalTests\ColumnPropertyMapperTest.cs" />
+    <Compile Include="OriginalTests\Data\TestMigrations.cs" />
+    <Compile Include="OriginalTests\MigrationLoaderTest.cs" />
+    <Compile Include="OriginalTests\MigrationTestCase.cs" />
+    <Compile Include="OriginalTests\MigrationTypeComparerTest.cs" />
+    <Compile Include="OriginalTests\MigratorTest.cs" />
+    <Compile Include="OriginalTests\MigratorTestDates.cs" />
+    <Compile Include="OriginalTests\ProviderFactoryTest.cs" />
+    <Compile Include="OriginalTests\Providers\GenericProviderTests.cs" />
+    <Compile Include="OriginalTests\Providers\MySqlTransformationProviderTest.cs" />
+    <Compile Include="OriginalTests\Providers\OracleTransformationProviderTest.cs" />
+    <Compile Include="OriginalTests\Providers\PostgreSQLTransformationProviderTest.cs" />
+    <Compile Include="OriginalTests\Providers\SQLiteTransformationProviderTest.cs" />
+    <Compile Include="OriginalTests\Providers\SqlServer2005TransformationProviderTest.cs" />
+    <Compile Include="OriginalTests\Providers\SqlServerCeTransformationProviderTest.cs" />
+    <Compile Include="OriginalTests\Providers\SqlServerTransformationProviderTest.cs" />
+    <Compile Include="OriginalTests\Providers\TransformationProviderBase.cs" />
+    <Compile Include="OriginalTests\Providers\TransformationProviderConstraintBase.cs" />
+    <Compile Include="OriginalTests\SchemaBuilderTests.cs" />
+    <Compile Include="OriginalTests\ScriptEngineTests.cs" />
+    <Compile Include="OriginalTests\Tools\SchemaDumperTest.cs" />
+    <Compile Include="OriginalTests\Tools\SqlFileLoggerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
