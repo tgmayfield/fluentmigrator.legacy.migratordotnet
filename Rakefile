@@ -5,7 +5,7 @@ task :default => [:clean, :build, :test]
 
 SOLUTION = "FluentMigrator.Legacy.MigratorDotNet (2010).sln"
 
-VERSION = "0.1.0.0"
+VERSION = "1.0.6.0"
 
 CLEAN.include('build')
 CLEAN.include('src/*/bin')
@@ -47,7 +47,7 @@ nuspec :generate_nuspec do |nuspec|
   nuspec.description = "Use FluentMigrator with old Migrator.NET migrations"
   nuspec.language = "en-US"
   nuspec.projectUrl = "https://github.com/tgmayfield/fluentmigrator.legacy.migratordotnet"
-  nuspec.dependency "FluentMigrator", "0.9.2.0"
+  nuspec.dependency "FluentMigrator", "1.0.6.0"
   nuspec.working_directory = "build/"
   nuspec.output_file = "FluentMigrator.Legacy.MigratorDotNet.nuspec"
 
