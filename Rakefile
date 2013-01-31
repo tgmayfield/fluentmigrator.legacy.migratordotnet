@@ -37,7 +37,8 @@ task :update_packages do
   sh 'tools/NuGet install -o ./packages src/FluentMigrator.Legacy.MigratorDotNet.Tests/packages.config'
 end
 
-task :publish => [:generate_nuspec, :generate_nupkg, :push_nupkg]
+task :test_publish => [:generate_nuspec, :generate_nupkg]
+task :publish => [:test_publish, :push_nupkg]
 
 nuspec :generate_nuspec do |nuspec|
   nuspec.id = "FluentMigrator.Legacy.MigratorDotNet"
