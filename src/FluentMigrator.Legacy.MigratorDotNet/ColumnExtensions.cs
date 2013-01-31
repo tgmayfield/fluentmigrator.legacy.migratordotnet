@@ -110,8 +110,9 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 			}
 		}
 
-		public static void ApplyColumnOptions<T>(IColumnOptionSyntax<T> builder, ColumnProperty columnProperty, object defaultValue)
-			where T : IFluentSyntax
+		public static void ApplyColumnOptions<TNext, TNextFk>(IColumnOptionSyntax<TNext, TNextFk> builder, ColumnProperty columnProperty, object defaultValue)
+			where TNext : IFluentSyntax
+			where TNextFk : IFluentSyntax
 		{
 			if (defaultValue != null)
 			{

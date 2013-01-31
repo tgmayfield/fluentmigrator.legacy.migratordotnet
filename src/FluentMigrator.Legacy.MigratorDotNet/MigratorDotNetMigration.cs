@@ -18,6 +18,7 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 		{
 			lock (_lock)
 			{
+				ApplicationContext = context.ApplicationContext;
 				Database = new TransformationProvider(context);
 				Up();
 				Database = null;
@@ -28,10 +29,13 @@ namespace FluentMigrator.Legacy.MigratorDotNet
 		{
 			lock (_lock)
 			{
+				ApplicationContext = context.ApplicationContext;
 				Database = new TransformationProvider(context);
 				Down();
 				Database = null;
 			}
 		}
+
+		public object ApplicationContext { get; protected set; }
 	}
 }
